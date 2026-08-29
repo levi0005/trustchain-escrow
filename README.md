@@ -241,6 +241,8 @@ docker compose up -d
 # Configure environment
 cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env.local
+# backend/.env.example includes MFA_JWT_SECRET and MFA_HIGH_VALUE_THRESHOLD,
+# consumed by backend/api/middleware/mfaAuth.js to gate high-value operations
 
 # Run migrations
 npm run db:migrate -w backend
